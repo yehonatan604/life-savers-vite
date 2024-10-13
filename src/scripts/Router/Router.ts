@@ -47,19 +47,33 @@ class Router {
 
 
     public loadContent = async (path: string) => {
-        const { outlet } = dom;
+        const { outlet } = dom; // Assuming dom is your DOM service object
         const page = path === '/' ? 'home' : path;
 
         try {
-            const res = await fetch(`../src/pages/${page}.html`);
+            const res = await fetch(`${page}.html`);
             const text = await res.text();
-            outlet.innerHTML = '';
-            outlet.appendChild(new DOMParser().parseFromString(text, 'text/html').getElementById("container")!);
-            animations.animateImages(dom.images(), dom.articles());
+
+            // Parse the HTML content
+            const parsedDocument = new DOMParser().parseFromString(text, 'text/html');
+
+            // Extract the specific container element
+            const container = parsedDocument.querySelector('#container');
+
+            // Ensure the container exists
+            if (container) {
+                outlet.innerHTML = ''; // Clear previous content
+                outlet.appendChild(container); // Append the new content
+                animations.animateImages(dom.images(), dom.articles()); // Run animations after content is loaded
+            } else {
+                console.error("Container element not found in the fetched HTML.");
+            }
         } catch (error) {
-            console.error(error);
+            console.error('Error loading content:', error);
         }
-    }
+    };
+
+
 
     navigate = async (uri: string) => {
         history.pushState({}, '', uri);
