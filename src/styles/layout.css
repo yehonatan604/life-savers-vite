@@ -1,0 +1,72 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+body {
+  @apply bg-gradient-to-br from-sky-200 to-transparent opacity-0 transition-all duration-1000 ease-in;
+
+  &.loaded {
+    @apply opacity-100;
+  }
+
+  header {
+    @apply fixed z-50 flex flex-col w-full top-0 right-0 bg-gradient-to-l from-blue-500 to-sky-500 to-90% shadow-xl shadow-slate-500;
+
+    &::before {
+      content: "";
+      background: linear-gradient(
+          to left,
+          rgba(59, 130, 246, 0.5),
+          rgba(14, 165, 233, 0.5),
+          rgba(59, 130, 246, 0.8)
+        ),
+        url("../images/giphy.gif") no-repeat;
+      background-size: cover;
+      z-index: -1;
+      @apply absolute top-0 left-0 size-full opacity-70;
+    }
+
+    &.after {
+      &::before {
+        @apply h-[29vh];
+      }
+    }
+
+    nav {
+      &.open {
+        height: 19vh;
+        transition: height 1s;
+      }
+
+      &.closed {
+        height: 0;
+        transition: height 1s;
+      }
+      overflow: hidden;
+    }
+  }
+
+  footer {
+    &::before {
+      content: "© כל הזכויות שמורות לוולדי ויורי 2024";
+      background: linear-gradient(
+          to left,
+          rgba(59, 130, 246, 0.5),
+          rgba(14, 165, 233, 0.5),
+          rgba(59, 130, 246, 0.8)
+        ),
+        url("../images/giphy.gif") no-repeat;
+      background-size: cover;
+      @apply text-white flex items-center justify-end p-3 absolute top-0 left-0 opacity-70 z-[-1] size-full;
+    }
+  }
+}
+
+main,
+footer,
+header.after::before {
+  @apply transition-all duration-1000;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo-svg.svg" type="image/svg+xml" />
+    <title>Vlad & Yuri</title>
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <script src="./src/scripts/main.ts" type="module" defer></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header dir="rtl">
+      <div class="flex flex-row-reverse justify-between px-5 items-center gap-4">
+        <a id="home" href="/">
+          <img
+            src="./src/images/logo.png"
+            alt="logo"
+            class="object-cover h-[10vh] logo"
+          />
+        </a>
+        <h1
+          class="text-zinc-100 text-pretty text-5xl max-md:text-3xl font-serif font-semibold"
+        >
+          ולאדי ויורי
+        </h1>
+        <span
+          id="hamburger"
+          class="cursor-pointer text-5xl text-zinc-100 max-md:m-auto hover:opacity-70"
+          >&#8801;</span
+        >
+      </div>
+      <nav class="closed w-full">
+        <ul class="list-none p-4 pt-0 flex flex-col gap-2">
+          <li><a id="home" class="link">בית</a></li>
+          <li><a id="courses" class="link">קורסים</a></li>
+          <li>
+            <a id="savers" class="link">שרותי הצלה והפעלת בריכות</a>
+          </li>
+          <li><a id="building" class="link">בניית\שיפוץ בריכות</a></li>
+          <li><a id="contact" class="link">יצירת קשר</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="h-screen overflow-y-auto text-right pb-[25vh] mt-28">
+      <!-- Welcome -->
+
+      <div class="outlet"></div>
+
+      <!-- Contact -->
+      <section id="contact" class="mt-10 w-3/5 max-md:w-4/5 m-auto space-y-5">
+        <div class="md:w-3/5 m-auto flex flex-col gap-4">
+          <p class="text-2xl">
+            אלפי לקוחות כבר נהנים מהשירותים המקצועיים שלנו. בין אם אתה זקוק לשיפוץ בריכה,
+            שירותי הצלה, או קורסים מקצועיים - אנחנו כאן בשבילך.
+          </p>
+          <p><strong class="text-xl">השאר פרטים ונחזור אליך בהקדם:</strong></p>
+        </div>
+        <p></p>
+
+        <form class="w-full">
+          <div class="flex flex-col gap-4 md:w-1/2 m-auto">
+            <label class="text-xl flex flex-col gap-2">
+              שם מלא:
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="שם מלא"
+                class="p-2 border-2 border-sky-500 rounded-lg"
+              />
+            </label>
+            <label class="text-xl flex flex-col gap-2">
+              אימייל:
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="אימייל"
+                class="p-2 border-2 border-sky-500 rounded-lg"
+              />
+            </label>
+            <label class="text-xl flex flex-col gap-2">
+              טלפון:
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="טלפון"
+                class="p-2 border-2 border-sky-500 rounded-lg"
+              />
+            </label>
+            <label class="text-xl flex flex-col gap-2">
+              הודעה:
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="הודעה"
+                class="p-2 border-2 border-sky-500 rounded-lg"
+              ></textarea>
+            </label>
+            <div class="flex flex-row-reverse gap-4">
+              <button
+                type="submit"
+                class="p-2 bg-sky-500 text-zinc-100 rounded-lg hover:bg-sky-600 w-1/2"
+              >
+                נקה
+              </button>
+              <button
+                type="submit"
+                class="p-2 bg-sky-500 text-zinc-100 rounded-lg hover:bg-sky-600 w-1/2"
+              >
+                שלח
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="fixed bottom-0 w-full flex justify-center items-center h-0 text-zinc-100 bg-gradient-to-l from-blue-500 to-sky-500 to-90%"
+    ></footer>
+  </body>
+</html>
