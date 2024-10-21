@@ -2,7 +2,7 @@ img {
   transform: scale(0); /* Start scaled down */
   transition: transform 1s ease-in-out; /* Smooth transition */
   will-change: transform;
-  @apply shadow-xl shadow-slate-900 border-2 border-sky-400 ring-2 ring-sky-500 rounded-lg;
+  @apply shadow-xl shadow-slate-900 border-2 border-[#004aad] ring-2 ring-[#004badc4] rounded-lg;
 
   &.logo {
     @apply shadow-none border-0 ring-0;
