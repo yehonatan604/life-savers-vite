@@ -6,7 +6,7 @@
   div {
     @apply grid grid-cols-1 md:grid-cols-3 gap-8 w-11/12 m-auto;
     a {
-      @apply bg-white shadow-lg rounded-lg pb-10 px-5 pt-0 h-[200px] flex flex-col justify-center items-center overflow-auto cursor-pointer ring-2 ring-sky-300 hover:ring-sky-600;
+      @apply bg-white shadow-lg rounded-lg pb-10 px-5 pt-0 h-[200px] flex flex-col justify-center items-center overflow-auto cursor-pointer ring-2 ring-[#004aad] hover:ring-sky-600;
 
       div {
         @apply flex justify-between items-center md:w-3/4 w-full;
@@ -42,7 +42,7 @@
       transition: transform 2s;
       will-change: transform;
     }
-    @apply flex flex-col m-auto my-5 ring-2 ring-sky-300 px-5 py-2 rounded-lg shadow-xl shadow-slate-900 bg-blue-100;
+    @apply flex flex-col m-auto my-5 ring-2 ring-[#004aad] px-5 py-2 rounded-lg shadow-xl shadow-slate-900 bg-blue-100;
 
     h2 {
       @apply text-2xl font-bold mb-4;
@@ -63,7 +63,7 @@
     a {
       @apply m-auto;
       button {
-        @apply bg-sky-500 text-white font-bold py-2 px-4 rounded-lg mb-10 mt-12 m-auto w-[120px] hover:opacity-70 transition-all duration-300;
+        @apply bg-[#004aad] text-white font-bold py-2 px-4 rounded-lg mb-10 mt-12 m-auto w-[120px] hover:opacity-70 transition-all duration-300;
       }
     }
   }
