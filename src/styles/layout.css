@@ -31,7 +31,7 @@ body {
 
     &.after {
       &::before {
-        @apply h-[29vh];
+        @apply h-[29vh] max-md:h-[35vh];
       }
     }
 
@@ -39,6 +39,10 @@ body {
       &.open {
         height: 19vh;
         transition: height 1s;
+
+        @media (max-width: 768px) {
+          height: 24vh;
+        }
       }
 
       &.closed {

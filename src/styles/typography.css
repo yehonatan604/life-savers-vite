@@ -11,6 +11,13 @@ p {
   font-size: 1.2rem;
 }
 
-.link {
+.link,
+#contact-link {
   @apply cursor-pointer text-neutral-100 hover:text-zinc-400 transition-all duration-300 h-fit;
+}
+
+.text-shadow {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  letter-spacing: 0.05em;
 }

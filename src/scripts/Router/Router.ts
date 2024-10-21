@@ -16,6 +16,7 @@ class Router {
             { uri: '/courses', callback: async () => { await this.loadContent('/courses') } },
             { uri: '/savers', callback: () => { this.loadContent('/savers') } },
             { uri: '/building', callback: () => { this.loadContent('/building') } },
+            { uri: '/jeep', callback: () => { this.loadContent('/jeep') } },
         ];
         window.onpopstate = async () => {
             this.init();
@@ -23,7 +24,7 @@ class Router {
     }
 
     init() {
-        const path = window.location.pathname;
+        let path = window.location.pathname;
         const matched = this.routes.some(route => {
             const regEx = new RegExp(`^${route.uri}$`);
             if (path.match(regEx)) {
@@ -47,8 +48,22 @@ class Router {
 
 
     public loadContent = async (path: string) => {
-        const { outlet } = dom; // Assuming dom is your DOM service object
+        const { outlet } = dom;
         const page = path === '/' ? 'home' : path;
+
+        // Check if the URL hash is #contact
+        if (window.location.hash === '#contact') {
+            // Scroll to the contact section if hash is #contact
+            document.getElementById('contact')!.scrollIntoView();
+        } else {
+            // Scroll to the courses section if hash is #courses
+            const welcome = document.getElementById('welcome')!;
+            if (welcome) {
+                welcome.scrollIntoView();
+            } else {
+                window.scrollTo(0, 0);
+            }
+        }
 
         try {
             const res = await fetch(`${page}.html`);
@@ -74,11 +89,9 @@ class Router {
     };
 
 
-
     navigate = async (uri: string) => {
         history.pushState({}, '', uri);
         this.init();
-        await this.loadContent(uri);
     }
 }
 

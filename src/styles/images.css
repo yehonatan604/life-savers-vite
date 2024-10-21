@@ -11,6 +11,10 @@ img {
   &#lifeguard {
     @apply m-auto mt-10 md:w-[55vw] max-md:w-5/6;
   }
+
+  &.img-jump {
+    @apply m-auto;
+  }
 }
 
 @media (min-width: 768px) {

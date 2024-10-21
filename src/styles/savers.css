@@ -7,13 +7,9 @@
 }
 
 .savers-services {
-  @apply ring-2 ring-sky-300 shadow-xl shadow-slate-900 rounded-lg p-5 bg-blue-100 w-3/5 m-auto;
+  @apply ring-2 ring-sky-300 shadow-xl shadow-slate-900 rounded-lg p-5 bg-blue-100 md:w-3/5 w-10/12 m-auto;
 
   div > ul {
     @apply flex flex-col gap-2;
   }
-}
-
-.img-jump {
-  @apply m-auto my-10 md:w-1/2 max-md:w-5/6;
 }

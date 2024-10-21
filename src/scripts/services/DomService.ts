@@ -52,6 +52,10 @@ class DomService {
                 header.classList.remove('after');
             });
         });
+        document.getElementById('contact-link')!.addEventListener('click', () => {
+            nav.classList.replace('open', 'closed');
+            header.classList.remove('after');
+        });
     }
 
     public static getInstance(): DomService {

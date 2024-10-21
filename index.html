@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="logo-svg.svg" type="image/svg+xml" />
-    <title>Vlad & Yuri</title>
+    <title>LifeGuards</title>
     <link rel="stylesheet" href="./src/styles/main.css" />
     <script src="./src/scripts/main.ts" type="module" defer></script>
   </head>
@@ -14,16 +14,12 @@
     <header dir="rtl">
       <div class="flex flex-row-reverse justify-between px-5 items-center gap-4">
         <a id="home" href="/">
-          <img
-            src="./src/images/logo.png"
-            alt="logo"
-            class="object-cover h-[10vh] logo"
-          />
+          <img src="/images/logo.png" alt="logo" class="object-cover h-[10vh] logo" />
         </a>
         <h1
-          class="text-zinc-100 text-pretty text-5xl max-md:text-3xl font-serif font-semibold"
+          class="text-zinc-100 text-pretty text-5xl max-md:text-3xl font-serif font-semibold text-shadow"
         >
-          ולאדי ויורי
+          Lifeguards
         </h1>
         <span
           id="hamburger"
@@ -33,18 +29,20 @@
       </div>
       <nav class="closed w-full">
         <ul class="list-none p-4 pt-0 flex flex-col gap-2">
-          <li><a id="home" class="link">בית</a></li>
           <li><a id="courses" class="link">קורסים</a></li>
           <li>
             <a id="savers" class="link">שרותי הצלה והפעלת בריכות</a>
           </li>
           <li><a id="building" class="link">בניית\שיפוץ בריכות</a></li>
-          <li><a id="contact" class="link">יצירת קשר</a></li>
+          <li><a id="jeep" class="link">טיולי ג'יפים</a></li>
+          <li><a id="contact-link" href="#contact">יצירת קשר</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="h-screen overflow-y-auto text-right pb-[25vh] mt-28">
+    <section id="main" />
+
+    <main class="h-screen overflow-y-auto text-right pb-[25vh] max-md:pt-1 mt-28">
       <!-- Welcome -->
 
       <div class="outlet"></div>
@@ -60,7 +58,7 @@
         </div>
         <p></p>
 
-        <form class="w-full">
+        <form class="w-full pb-10">
           <div class="flex flex-col gap-4 md:w-1/2 m-auto">
             <label class="text-xl flex flex-col gap-2">
               שם מלא:
@@ -98,7 +96,7 @@
                 name="message"
                 id="message"
                 cols="30"
-                rows="10"
+                rows="8"
                 placeholder="הודעה"
                 class="p-2 border-2 border-sky-500 rounded-lg"
               ></textarea>
@@ -124,7 +122,7 @@
 
     <!-- Footer -->
     <footer
-      class="fixed bottom-0 w-full flex justify-center items-center h-0 text-zinc-100 bg-gradient-to-l from-blue-500 to-sky-500 to-90%"
+      class="fixed bottom-0 w-full flex justify-center items-center h-0 text-zinc-100 bg-gradient-to-l from-blue-500 to-sky-500 to-90% text-shadow"
     ></footer>
   </body>
 </html>
