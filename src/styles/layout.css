@@ -31,13 +31,13 @@ body {
 
     &.after {
       &::before {
-        @apply h-[29vh] max-md:h-[35vh];
+        @apply h-[35vh];
       }
     }
 
     nav {
       &.open {
-        height: 19vh;
+        height: 25vh;
         transition: height 1s;
 
         @media (max-width: 768px) {
