@@ -46,7 +46,6 @@ class Router {
         }
     }
 
-
     public loadContent = async (path: string) => {
         const { outlet } = dom;
         const page = path === '/' ? 'home' : path;
@@ -89,13 +88,24 @@ class Router {
     };
 
 
-    navigate = async (uri: string) => {
+    public navigate = async (uri: string) => {
         history.pushState({}, '', uri);
         this.init();
+    }
+
+    public setAppRouts = (links: NodeListOf<HTMLSpanElement>) => {
+        links.forEach(link => {
+            link.addEventListener('click', (e: Event) => {
+                e.preventDefault();
+                const target = e.target as HTMLSpanElement;
+                if (target && 'id' in target) {
+                    router.navigate(target.id);
+                }
+            });
+        });
     }
 }
 
 const router = new Router();
 router.init();
-
 export { router };

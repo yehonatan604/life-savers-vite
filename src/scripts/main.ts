@@ -1,10 +1,7 @@
-import { animations } from "./services/AnimationsService";
 import { dom } from "./services/DomService";
+import { router } from "./Router/Router";
 import '../styles/main.css';
 
-const { links } = dom;
-const { correctFooterAnimation } = animations;
-
 window.onload = () => {
-  correctFooterAnimation(links);
+  router.setAppRouts(dom.links);
 };

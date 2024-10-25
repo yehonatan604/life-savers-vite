@@ -1,22 +1,8 @@
-import { router } from "../Router/Router";
 
 class AnimationsService {
     private static instance: AnimationsService;
 
-    private constructor() {
-    }
-
-    correctFooterAnimation = (links: NodeListOf<HTMLSpanElement>) => {
-        links.forEach(link => {
-            link.addEventListener('click', (e: Event) => {
-                e.preventDefault();
-                const target = e.target as HTMLSpanElement;
-                if (target && 'id' in target) {
-                    router.navigate(target.id);
-                }
-            });
-        });
-    }
+    private constructor() { }
 
     public static getInstance(): AnimationsService {
         if (!AnimationsService.instance) {
@@ -72,7 +58,6 @@ class AnimationsService {
 const anim = AnimationsService.getInstance();
 
 const animationFuncs = {
-    correctFooterAnimation: anim.correctFooterAnimation,
     animateImages: anim.animateImages
 }
 
