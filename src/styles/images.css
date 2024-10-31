@@ -2,7 +2,8 @@ img {
   transform: scale(0); /* Start scaled down */
   transition: transform 1s ease-in-out; /* Smooth transition */
   will-change: transform;
-  @apply shadow-xl shadow-slate-900 border-2 border-[#004aad] ring-2 ring-[#004badc4] rounded-lg;
+  /* @apply shadow-xl shadow-slate-900 border-2 border-[#004aad] ring-2 ring-[#004badc4] rounded-lg object-fill; */
+  @apply shadow-xl shadow-slate-900 rounded-lg object-contain;
 
   &.logo {
     @apply shadow-none border-0 ring-0;
@@ -17,8 +18,69 @@ img {
   }
 }
 
+.octo-wrapper {
+  scale: 0;
+  &.scale-up {
+    scale: 1;
+    transition: scale 2.5s ease-in-out;
+    will-change: scale;
+  }
+  transition: scale 1s ease-in-out;
+  will-change: scale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right bottom, blue, cyan, darkblue, skyblue);
+  padding: 4px; /* Adjust this for desired border thickness */
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
+
+.octo {
+  width: 300px;
+  height: 300px;
+  clip-path: inherit; /* Ensures child retains octagon shape */
+  overflow: hidden;
+  transform: rotate(0deg); /* Neutralize rotation */
+}
+
+.oct {
+  width: 100%;
+  height: 100%;
+  clip-path: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oct > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: inherit;
+}
+
 @media (min-width: 768px) {
   img {
     transition: transform 2s ease-in-out; /* Smooth transition */
+  }
+
+  .logo-t {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-l,
+  .logo-r {
+    display: none;
   }
 }

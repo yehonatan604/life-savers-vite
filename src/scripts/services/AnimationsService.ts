@@ -47,6 +47,16 @@ class AnimationsService {
                 }
             });
 
+            document.querySelectorAll('.octo-wrapper').forEach((octo) => {
+                const rect = octo.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const increaseRatio = 200;
+
+                if (rect.top < windowHeight + increaseRatio && rect.bottom > 0) {
+                    octo.classList.add('scale-up');
+                }
+            });
+
             requestAnimationFrame(onScroll);
         }
 
