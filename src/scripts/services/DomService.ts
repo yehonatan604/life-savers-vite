@@ -59,12 +59,13 @@ class DomService {
         e.preventDefault();
         nav.classList.replace("open", "closed");
         header.classList.remove("after");
-        hamburger.classList.remove("open");
+        hamburger.classList.toggle("open");
       });
     });
     document.getElementById("contact-link")!.addEventListener("click", () => {
       nav.classList.replace("open", "closed");
       header.classList.remove("after");
+      hamburger.classList.toggle("open");
     });
   }
 
